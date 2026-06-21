@@ -1,33 +1,61 @@
-<h1>Descrição do Sistema</h1><br>
-O sistema tem como objetivo gerenciar um pet shop, permitindo o controle de clientes, pets e agendamentos de serviços.<br>
-O sistema será utilizado por atendentes do pet shop para registrar clientes e seus animais e também para organizar os agendamentos de serviços como banho e tosa.<br>
-O problema que o sistema resolve é a falta de organização no controle de atendimentos e clientes, permitindo centralizar as informações e facilitar consultas.<br>
-O público-alvo são funcionários de pet shops que necessitam de uma ferramenta simples para gerenciamento básico de operações.<br><br><br>
+# Projeto Final LPOO - Pet Shop
 
-<h1>Requisitos Funcionais:</h1><br>
-1 - Cadastrar cliente<br>
-2 - Editar cliente<br>
-3 - Remover cliente<br>
-4 - Consultar cliente<br>
-5 - Cadastrar pet<br>
-6 - Associar pet a um cliente<br>
-7 - Consultar pets de um cliente<br>
-8 - Criar agendamento<br>
-9 - Consultar agendamentos<br>
-10 - Cancelar agendamento<br><br><br>
+Sistema de gestão de pet shop desenvolvido em Python com interface gráfica (Tkinter), persistência em PostgreSQL e arquitetura MVC.
 
-<h1>Requisitos não Funcionais:</h1><br>
-1 - O sistema deve ser desenvolvido em Python<br>
-2 - O sistema deve utilizar programação orientada a objetos<br>
-3 - O sistema deve apresentar interface simples e intuitiva<br>
-4 - O sistema deve responder às ações do usuário em tempo adequado<br>
-5 - O sistema deve permitir fácil manutenção e expansão<br><br><br>
+## Descrição geral
 
-<h1>Regras de negocio:</h1><br>
-1 - Um cliente pode possuir um ou mais pets cadastrados<br>
-2 - Um pet deve estar associado a apenas um cliente<br>
-3 - Um agendamento deve possuir data e horário válidos<br>
-4 - Não pode haver dois agendamentos no mesmo horário para o mesmo pet<br><br><br>
+O sistema permite cadastrar **clientes**, **pets** e **agendamentos** de serviços (banho, tosa, etc.). Cada pet pertence a um cliente, e cada agendamento está vinculado a um pet, conforme os diagramas UML do projeto.
 
+## Estrutura do projeto
 
+```
+model/       → classes de domínio (Cliente, Pet, Agendamento)
+dao/         → camada de persistência (DAO)
+control/     → regras de negócio e validações
+view/        → interface gráfica Tkinter
+sql/         → scripts de criação das tabelas
+diagramas/   → diagramas UML do sistema
+```
 
+## Diagrama de classes
+
+![Diagrama de Classes](diagramas/Modelagem.png)
+
+## Padrões de projeto
+
+1. **DAO (Data Access Object)** — camada `dao/` com CRUD completo para Cliente, Pet e Agendamento.
+2. **Factory Method** — `PetFactory` em `model/pet.py` cria instâncias de `Cachorro`, `Gato`, `Ave` ou `OutroPet` conforme a espécie informada.
+
+## Como executar
+
+1. Instale a dependência:
+   ```bash
+   pip install psycopg2-binary
+   ```
+
+2. Configure o PostgreSQL e crie o banco `Trabalho_Final_LPOO` (credenciais em `conexao.py`).
+
+3. Execute o script SQL:
+   ```bash
+   psql -U postgres -d Trabalho_Final_LPOO -f sql/schema.sql
+   ```
+
+4. Inicie o sistema:
+   ```bash
+   python main.py
+   ```
+
+## Funcionalidades
+
+- CRUD completo de **Clientes** (com filtro por nome e validação de telefone)
+- CRUD completo de **Pets** (associados a clientes, com Factory por espécie)
+- CRUD completo de **Agendamentos** (validação de data/hora e conflito de horário)
+- Menu de navegação entre telas
+- Tela **Sobre** com informações do sistema e autor
+
+## Declaração de uso de IA
+
+- [x] Utilizei IA como ferramenta de apoio.
+- **Ferramenta:** Cursor (Composer)
+- **Finalidade:** apoio na estruturação do projeto, implementação das camadas DAO/Controller/View e documentação.
+- **Validação:** Todo o código gerado foi revisado e adaptado ao padrão do projeto de referência da disciplina.

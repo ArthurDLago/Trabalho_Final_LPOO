@@ -1,11 +1,11 @@
-from model.cliente import Cliente
-from dao.cliente_dao import ClienteDAO
+import sys
+import os
 
-dao = ClienteDAO()
+sys.path.append(os.path.abspath(os.path.dirname(__file__)))
 
-cliente = Cliente(None, "João", "99999-9999")
-dao.inserir(cliente)
+from view.janela_principal import JanelaPrincipal
 
-clientes = dao.listar()
-for c in clientes:
-    print(c.get_id(), c.get_nome(), c.get_telefone())
+
+if __name__ == "__main__":
+    app = JanelaPrincipal()
+    app.mainloop()
