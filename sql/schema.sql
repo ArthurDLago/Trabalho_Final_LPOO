@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS agendamento (
     data DATE NOT NULL,
     hora VARCHAR(5) NOT NULL,
     pet_id INTEGER NOT NULL REFERENCES pet(id) ON DELETE CASCADE,
-    CONSTRAINT uq_agendamento_pet_data_hora UNIQUE (pet_id, data, hora)
+    CONSTRAINT uq_agendamento_pet_data_hora UNIQUE (data, hora)
 );
 
 CREATE INDEX IF NOT EXISTS idx_pet_cliente ON pet(cliente_id);

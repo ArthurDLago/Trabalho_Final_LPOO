@@ -59,3 +59,34 @@ diagramas/   → diagramas UML do sistema
 - **Ferramenta:** Cursor (Composer)
 - **Finalidade:** apoio na estruturação do projeto, implementação das camadas DAO/Controller/View e documentação.
 - **Validação:** Todo o código gerado foi revisado e adaptado ao padrão do projeto de referência da disciplina.
+
+## Descrição do Sistema
+**O sistema tem como objetivo gerenciar um pet shop, permitindo o controle de clientes, pets e agendamentos de serviços.**
+**O sistema será utilizado por atendentes do pet shop para registrar clientes e seus animais e também para organizar os agendamentos de serviços como banho e tosa.**
+**O problema que o sistema resolve é a falta de organização no controle de atendimentos e clientes, permitindo centralizar as informações e facilitar consultas.**
+**O público-alvo são funcionários de pet shops que necessitam de uma ferramenta simples para gerenciamento básico de operações.**
+
+## Requisitos Funcionais:
+**Cadastrar cliente**
+**Editar cliente**
+**Remover cliente**
+**Consultar cliente**
+**Cadastrar pet**
+**Associar pet a um cliente**
+**Consultar pets de um cliente**
+**Criar agendamento**
+**Consultar agendamentos**
+**Cancelar agendamento**
+
+# Requisitos não Funcionais:
+**O sistema deve ser desenvolvido em Python**
+**O sistema deve utilizar programação orientada a objetos**
+**O sistema deve apresentar interface simples e intuitiva**
+**O sistema deve responder às ações do usuário em tempo adequado**
+**O sistema deve permitir fácil manutenção e expansão**
+
+# Regras de negocio:
+**Um cliente pode possuir um ou mais pets cadastrados**
+**Um pet deve estar associado a apenas um cliente**
+**Um agendamento deve possuir data e horário válidos**
+**Não pode haver dois agendamentos no mesmo horário para o mesmo pet**
