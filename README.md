@@ -57,7 +57,7 @@ diagramas/   → diagramas UML do sistema
 
 - [x] Utilizei IA como ferramenta de apoio.
 - **Ferramenta:** Cursor (Composer)
-- **Finalidade:** apoio na estruturação do projeto, implementação das camadas DAO/Controller/View e documentação.
+- **Finalidade:** apoio na estruturação do projeto e documentação.
 - **Validação:** Todo o código gerado foi revisado e adaptado ao padrão do projeto de referência da disciplina.
 
 ## Descrição do Sistema
